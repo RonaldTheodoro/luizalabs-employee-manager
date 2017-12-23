@@ -7,9 +7,10 @@ from rest_framework.test import APITestCase
 
 
 class DepartmentGetEndPointTest(APITestCase):
+    url = reverse('department-list')
 
     def setUp(self):
-        self.response = self.client.get(reverse('department-list'))
+        self.response = self.client.get(self.url)
 
     def test_get_department(self):
         self.assertEqual(200, self.response.status_code)
