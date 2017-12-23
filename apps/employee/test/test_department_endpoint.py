@@ -1,4 +1,5 @@
 import json
+from unittest import skip
 
 from django.urls import reverse
 
@@ -6,6 +7,15 @@ from rest_framework.test import APITestCase
 
 
 class DepartmentGetEndPointTest(APITestCase):
+
+    def setUp(self):
+        self.response = self.client.get(reverse('department-list'))
+
+    def test_get_department(self):
+        self.assertEqual(200, self.response.status_code)
+
+
+class DepartmentPostEndPointTest(APITestCase):
     url = reverse('department-list')
     data = [
         {'name': 'Architecture'},
@@ -23,9 +33,6 @@ class DepartmentGetEndPointTest(APITestCase):
 
     def create_json(self):
         return json.loads(self.response.rendered_content)
-
-    def test_get_department(self):
-        self.assertEqual(200, self.response.status_code)
 
     def test_get_number_of_registers(self):
         itens = self.create_json()
