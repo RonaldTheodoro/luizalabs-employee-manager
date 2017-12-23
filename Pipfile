@@ -16,6 +16,7 @@ dj-database-url = "*"
 coreapi = "*"
 pygments = "*"
 django-test-without-migrations = "*"
+django-extensions = "*"
 
 
 [dev-packages]
