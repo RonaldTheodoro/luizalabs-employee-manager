@@ -21,3 +21,5 @@ django-extensions = "*"
 
 [dev-packages]
 
+werkzeug = "*"
+ipython = {extras = ["notebook"]}
