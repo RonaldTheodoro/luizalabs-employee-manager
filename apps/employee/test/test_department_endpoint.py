@@ -12,7 +12,7 @@ class DepartmentGetEndPointTest(APITestCase):
     def setUp(self):
         self.response = self.client.get(self.url)
 
-    def test_get_department(self):
+    def test_get_list_department(self):
         self.assertEqual(200, self.response.status_code)
 
 
