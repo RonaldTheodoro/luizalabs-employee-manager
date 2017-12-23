@@ -1,5 +1,7 @@
 from django.test import TestCase
-from django.urls import reverse
+from django.urls import reverse, resolve
+
+from . import views
 
 
 class IndexViewTest(TestCase):
@@ -12,3 +14,7 @@ class IndexViewTest(TestCase):
 
     def test_template(self):
         self.assertTemplateUsed(self.response, 'index.html')
+
+    def test_index_view_function(self):
+        view = resolve(reverse('core:index'))
+        self.assertEqual(view.func, views.index)
