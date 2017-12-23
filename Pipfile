@@ -15,6 +15,7 @@ python-decouple = "*"
 dj-database-url = "*"
 coreapi = "*"
 pygments = "*"
+django-test-without-migrations = "*"
 
 
 [dev-packages]
