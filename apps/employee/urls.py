@@ -10,11 +10,11 @@ from . import views
 # app_name = 'employee'
 
 router = DefaultRouter()
-router.register(r'', views.EmployeeViewSet)
+router.register(r'employee', views.EmployeeViewSet)
 router.register(r'department', views.DepartmentViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
     path('schema/', get_schema_view(title='Luizalabs Employee Manager')),
-    path('docs/', include_docs_urls(title='API Docs')),
+    path('docs/', include_docs_urls(title='API Docs', public=False)),
 ]
