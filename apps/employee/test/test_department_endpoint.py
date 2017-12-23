@@ -6,7 +6,7 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 
 
-class DepartmentGetEndPointTest(APITestCase):
+class DepartmentGetListEndPointTest(APITestCase):
     url = reverse('department-list')
 
     def setUp(self):
