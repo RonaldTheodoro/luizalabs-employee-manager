@@ -7,6 +7,7 @@ from . import views
 app_name = 'employee'
 
 router = DefaultRouter()
+router.register(r'', views.EmployeeViewSet)
 router.register(r'department', views.DepartmentViewSet)
 
 urlpatterns = [
