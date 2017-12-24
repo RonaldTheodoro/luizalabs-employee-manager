@@ -42,5 +42,15 @@ class DepartmentEndPointTest(BaseEndPointTest):
 
     def test_get_detail_department(self):
         response = self.client.get(self.detail_url(1))
-        employee = self.create_json(response)
-        self.assertEqual(employee['name'], 'Architecture')
+        department = self.create_json(response)
+        self.assertEqual(department['name'], 'Architecture')
+
+    def test_put_department(self):
+        response = self.client.put(
+            self.detail_url(1),
+            data=json.dumps({'name': 'Help Desk'}),
+            content_type='application/json'
+        )
+        self.assertEqual(200, response.status_code)
+        department = self.create_json(response)
+        self.assertEqual(department['name'], 'Help Desk')
