@@ -97,3 +97,7 @@ class EmployeeEndPointTest(BaseEndPointTest):
         employee = self.create_json(response)
         self.assertEqual(employee['name'], 'Ryoga Kamishiro')
         self.assertEqual(employee['email'], 'ryoga@kamishiro.com')
+
+    def test_delete_employee(self):
+        response = self.client.delete(self.detail_url(3))
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
