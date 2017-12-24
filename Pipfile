@@ -17,6 +17,8 @@ coreapi = "*"
 pygments = "*"
 django-test-without-migrations = "*"
 django-extensions = "*"
+gunicorn = "*"
+"psycopg2" = "*"
 
 
 [dev-packages]
