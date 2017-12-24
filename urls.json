@@ -1,0 +1,315 @@
+{
+    "_type": "document",
+    "_meta": {
+        "url": "http://localhost:8000/schema/",
+        "title": "Luizalabs Employee Manager"
+    },
+    "department": {
+        "list": {
+            "_type": "link",
+            "url": "/department/",
+            "action": "get",
+            "fields": [
+                {
+                    "name": "page",
+                    "location": "query",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "Page",
+                        "description": "A page number within the paginated result set."
+                    }
+                }
+            ]
+        },
+        "create": {
+            "_type": "link",
+            "url": "/department/",
+            "action": "post",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "name",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "read": {
+            "_type": "link",
+            "url": "/department/{id}/",
+            "action": "get",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this departamento."
+                    }
+                }
+            ]
+        },
+        "update": {
+            "_type": "link",
+            "url": "/department/{id}/",
+            "action": "put",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this departamento."
+                    }
+                },
+                {
+                    "name": "name",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "partial_update": {
+            "_type": "link",
+            "url": "/department/{id}/",
+            "action": "patch",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this departamento."
+                    }
+                },
+                {
+                    "name": "name",
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "delete": {
+            "_type": "link",
+            "url": "/department/{id}/",
+            "action": "delete",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this departamento."
+                    }
+                }
+            ]
+        }
+    },
+    "employee": {
+        "list": {
+            "_type": "link",
+            "url": "/employee/",
+            "action": "get",
+            "fields": [
+                {
+                    "name": "page",
+                    "location": "query",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "Page",
+                        "description": "A page number within the paginated result set."
+                    }
+                }
+            ]
+        },
+        "create": {
+            "_type": "link",
+            "url": "/employee/",
+            "action": "post",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "name",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "email",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Email",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "department",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Department",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "read": {
+            "_type": "link",
+            "url": "/employee/{id}/",
+            "action": "get",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this funcionario."
+                    }
+                }
+            ]
+        },
+        "update": {
+            "_type": "link",
+            "url": "/employee/{id}/",
+            "action": "put",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this funcionario."
+                    }
+                },
+                {
+                    "name": "name",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "email",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Email",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "department",
+                    "required": true,
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Department",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "partial_update": {
+            "_type": "link",
+            "url": "/employee/{id}/",
+            "action": "patch",
+            "encoding": "application/json",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this funcionario."
+                    }
+                },
+                {
+                    "name": "name",
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Name",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "email",
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Email",
+                        "description": ""
+                    }
+                },
+                {
+                    "name": "department",
+                    "location": "form",
+                    "schema": {
+                        "_type": "string",
+                        "title": "Department",
+                        "description": ""
+                    }
+                }
+            ]
+        },
+        "delete": {
+            "_type": "link",
+            "url": "/employee/{id}/",
+            "action": "delete",
+            "fields": [
+                {
+                    "name": "id",
+                    "required": true,
+                    "location": "path",
+                    "schema": {
+                        "_type": "integer",
+                        "title": "ID",
+                        "description": "A unique integer value identifying this funcionario."
+                    }
+                }
+            ]
+        }
+    }
+}
