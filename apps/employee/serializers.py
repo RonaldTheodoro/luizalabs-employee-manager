@@ -14,7 +14,10 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class EmployeeSerializer(serializers.ModelSerializer):
-    department = serializers.ReadOnlyField(source='department.name')
+    department = serializers.SlugRelatedField(
+        slug_field='name',
+        queryset=models.Department.objects.all()
+    )
     department_url = serializers.HyperlinkedIdentityField(
         view_name='department-detail'
     )
