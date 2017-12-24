@@ -13,8 +13,10 @@ router = DefaultRouter()
 router.register(r'employee', views.EmployeeViewSet)
 router.register(r'department', views.DepartmentViewSet)
 
+schema = get_schema_view(title='Luizalabs Employee Manager', public=True)
+
 urlpatterns = [
     path('', include(router.urls)),
-    path('schema/', get_schema_view(title='Luizalabs Employee Manager')),
-    path('docs/', include_docs_urls(title='API Docs', public=False)),
+    path('schema/', schema),
+    path('docs/', include_docs_urls(title='API Docs', public=True)),
 ]
