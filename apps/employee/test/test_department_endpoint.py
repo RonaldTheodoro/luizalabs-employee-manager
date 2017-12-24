@@ -3,6 +3,7 @@ from unittest import skip
 
 from django.urls import reverse
 
+from rest_framework import status
 from rest_framework.test import APITestCase
 
 
@@ -34,7 +35,7 @@ class BaseEndPointTest(APITestCase):
 class DepartmentEndPointTest(BaseEndPointTest):
 
     def test_get_list_department(self):
-        self.assertEqual(200, self.response.status_code)
+        self.assertEqual(status.HTTP_200_OK, self.response.status_code)
 
     def test_get_number_of_registers(self):
         itens = self.create_json()
@@ -51,6 +52,6 @@ class DepartmentEndPointTest(BaseEndPointTest):
             data=json.dumps({'name': 'Help Desk'}),
             content_type='application/json'
         )
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
         department = self.create_json(response)
         self.assertEqual(department['name'], 'Help Desk')
