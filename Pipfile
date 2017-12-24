@@ -14,14 +14,12 @@ django-filter = "*"
 python-decouple = "*"
 dj-database-url = "*"
 coreapi = "*"
-pygments = "*"
 django-test-without-migrations = "*"
 django-extensions = "*"
-gunicorn = "*"
-"psycopg2" = "*"
 
 
 [dev-packages]
 
 werkzeug = "*"
 ipython = {extras = ["notebook"]}
+httpie = "*"
