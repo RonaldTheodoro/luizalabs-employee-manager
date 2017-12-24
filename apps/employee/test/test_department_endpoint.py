@@ -55,3 +55,8 @@ class DepartmentEndPointTest(BaseEndPointTest):
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         department = self.create_json(response)
         self.assertEqual(department['name'], 'Help Desk')
+
+    
+    def test_delete_department(self):
+        response = self.client.delete(self.detail_url(1))
+        self.assertEqual(status.HTTP_204_NO_CONTENT, response.status_code)
