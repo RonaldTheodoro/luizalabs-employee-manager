@@ -4,6 +4,7 @@ from . import models, serializers
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
+    """Department API End Point"""
     queryset = models.Department.objects.all()
     serializer_class = serializers.DepartmentSerializer
 
@@ -11,6 +12,7 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
+    """Employee API End Point"""
     queryset = models.Employee.objects.all()
     serializer_class = serializers.EmployeeSerializer
 
