@@ -16,6 +16,7 @@ router.register(r'department', views.DepartmentViewSet)
 schema = get_schema_view(title='Luizalabs Employee Manager', public=True)
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('', include(router.urls)),
     path('schema/', schema),
     path('docs/', include_docs_urls(title='API Docs', public=True)),
