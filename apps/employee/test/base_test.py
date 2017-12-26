@@ -1,5 +1,6 @@
 import json
 
+from django.contrib.auth.models import User
 from django.urls import reverse
 
 from rest_framework.test import APITestCase
@@ -30,6 +31,12 @@ class BaseEndPointTest(APITestCase):
     ]
 
     def setUp(self):
+        user = User.objects.create_user(
+            'ronaldtheodoro',
+            'ronald@theodoro.com',
+            'asdf1234'
+        )
+        self.client.force_authenticate(user=user)
         self.create_data()
 
     def create_data(self):
